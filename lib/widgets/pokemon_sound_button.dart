@@ -27,7 +27,7 @@ class PokemonSoundButton extends StatelessWidget {
               IconButton(
                 icon: const Icon(
                   Icons.volume_up,
-                  color: white,
+                  color: whiteColor,
                 ),
                 onPressed: onPressed,
                 constraints: const BoxConstraints(minWidth: 40),
@@ -36,7 +36,8 @@ class PokemonSoundButton extends StatelessWidget {
                 padding: EdgeInsets.all(10.0),
                 child: Text(
                   playText,
-                  style: TextStyle(color: white, fontWeight: FontWeight.bold),
+                  style:
+                      TextStyle(color: whiteColor, fontWeight: FontWeight.bold),
                 ),
               )
             ],

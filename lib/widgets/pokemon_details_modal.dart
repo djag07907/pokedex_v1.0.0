@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:pokedex_v1_0_0/commons/pikachu_loading.dart';
-import 'package:pokedex_v1_0_0/commons/pokemon_sound_button.dart';
+import 'package:pokedex_v1_0_0/widgets/pokemon_sound_button.dart';
 import 'package:pokedex_v1_0_0/models/pokemon_model.dart';
 import 'package:pokedex_v1_0_0/repositories/pokemon_repository.dart';
 import 'package:pokedex_v1_0_0/resources/themes.dart';
@@ -63,8 +63,8 @@ class _PokemonDetailsModalState extends State<PokemonDetailsModal> {
               title: Text(
                 _capitalizeFirstLetter(
                     '${widget.pokemon.name} #${widget.pokemon.id.toString().padLeft(3, '0')}'),
-                style:
-                    const TextStyle(color: white, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                    color: whiteColor, fontWeight: FontWeight.bold),
               ),
               backgroundColor: mainBackground,
             ),

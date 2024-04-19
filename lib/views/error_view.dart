@@ -34,7 +34,7 @@ class ErrorView extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
-                  color: grey,
+                  color: greyColor,
                 ),
               ),
             ],
@@ -53,7 +53,7 @@ class ErrorView extends StatelessWidget {
             ),
             child: const Text(
               tryNowText,
-              style: TextStyle(color: white),
+              style: TextStyle(color: whiteColor),
             ),
           ),
         ),

@@ -4,7 +4,7 @@ import 'package:pokedex_v1_0_0/bloc/pokemon_bloc.dart';
 import 'package:pokedex_v1_0_0/bloc/pokemon_event.dart';
 import 'package:pokedex_v1_0_0/bloc/pokemon_state.dart';
 import 'package:pokedex_v1_0_0/commons/pikachu_loading.dart';
-import 'package:pokedex_v1_0_0/commons/pokemon_details_modal.dart';
+import 'package:pokedex_v1_0_0/widgets/pokemon_details_modal.dart';
 import 'package:pokedex_v1_0_0/models/pokemon_model.dart';
 import 'package:pokedex_v1_0_0/repositories/pokemon_repository.dart';
 import 'package:pokedex_v1_0_0/resources/constants.dart';
@@ -70,12 +70,6 @@ class _PokemonListViewState extends State<PokemonListView> {
           return PokemonDetailsModal(
               pokemon: detailedPokemon, description: description);
         });
-  }
-
-  Future<Pokemon> _fetchPokemonDetails(int id) async {
-    final repository = PokemonRepository();
-    final pokemon = await repository.fetchPokemonDetails(id);
-    return pokemon;
   }
 
   Future<void> _refreshPokemons({int offset = 0}) async {

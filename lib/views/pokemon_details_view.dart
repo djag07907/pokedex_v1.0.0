@@ -57,7 +57,7 @@ Color getColorForType(String type) {
     case 'flying':
       return flyingBackground;
     default:
-      return black;
+      return blackColor;
   }
 }
 
@@ -78,7 +78,7 @@ class _PokemonDetailsViewState extends State<PokemonDetailsView> {
       textSpans.add(TextSpan(
         text: line,
         style: const TextStyle(
-          color: black,
+          color: blackColor,
           fontWeight: FontWeight.bold,
         ),
       ));
@@ -136,7 +136,7 @@ class _PokemonDetailsViewState extends State<PokemonDetailsView> {
                         child: Text(
                           _capitalizeFirstLetter(type),
                           style: const TextStyle(
-                            color: white,
+                            color: whiteColor,
                           ),
                         ),
                       ),
@@ -169,7 +169,7 @@ class _PokemonDetailsViewState extends State<PokemonDetailsView> {
               const Text(
                 descriptionText,
                 style: TextStyle(
-                  color: black,
+                  color: blackColor,
                   fontWeight: FontWeight.bold,
                 ),
               ),
