@@ -1,0 +1,24 @@
+import 'package:flutter/material.dart';
+
+const mainBackground = Color(0xFFEB2E52);
+const accentBackground = Color(0xFFF05C74);
+const white = Color(0xFFFFFFFF);
+const grey = Colors.grey;
+const grassBackground = Color(0xFF4CAF50);
+const fireBackground = Color(0xFFF44336);
+const waterBackground = Color(0xFF4A90E2);
+const electricBackground = Color(0xFFFFD700);
+const bugBackground = Color(0xFF8B4513);
+const normalBackground = Color(0xFFA9A9A9);
+const poisonBackground = Color(0xFF800080);
+const groundBackground = Color(0xFFCD853F);
+const fairyBackground = Color(0xFFFF69B4);
+const fightingBackground = Color(0xFFA52A2A);
+const psychicBackground = Color(0xFFFF1493);
+const rockBackground = Color(0xFF696969);
+const ghostBackground = Color(0xFF483D8B);
+const iceBackground = Color(0xFFADD8E6);
+const dragonBackground = Color(0xFF8A2BE2);
+const darkBackground = Color(0xFF2F4F4F);
+const steelBackground = Color(0xFFB0C4DE);
+const flyingBackground = Color(0xFF87CEEB);
