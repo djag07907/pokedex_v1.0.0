@@ -88,4 +88,16 @@ class PokemonRepository {
       throw Exception('Failed to load pokemon details');
     }
   }
+
+  Future<String> fetchPokemonCryUrl(int id) async {
+    final response = await http.get(Uri.parse('$pokemonList/$id'));
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      final cries = data['cries'];
+      final latestCryUrl = cries['latest'];
+      return latestCryUrl;
+    } else {
+      throw Exception('Failed to load pokemon cry URL');
+    }
+  }
 }

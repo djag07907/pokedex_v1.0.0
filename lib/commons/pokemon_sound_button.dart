@@ -13,30 +13,34 @@ class PokemonSoundButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
-        decoration: BoxDecoration(
-          color: mainBackground,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            IconButton(
-              icon: const Icon(
-                Icons.volume_up,
-                color: white,
+      child: InkWell(
+        onTap: onPressed,
+        borderRadius: BorderRadius.circular(10),
+        child: Container(
+          decoration: BoxDecoration(
+            color: mainBackground,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              IconButton(
+                icon: const Icon(
+                  Icons.volume_up,
+                  color: white,
+                ),
+                onPressed: onPressed,
+                constraints: const BoxConstraints(minWidth: 40),
               ),
-              onPressed: onPressed,
-              constraints: const BoxConstraints(minWidth: 40),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Text(
-                playText,
-                style: TextStyle(color: white, fontWeight: FontWeight.bold),
-              ),
-            )
-          ],
+              const Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Text(
+                  playText,
+                  style: TextStyle(color: white, fontWeight: FontWeight.bold),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
