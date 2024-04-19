@@ -10,7 +10,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key, required this.pokemonBloc}) : super(key: key);
+  const MyApp({super.key, required this.pokemonBloc});
 
   final PokemonBloc pokemonBloc;
 

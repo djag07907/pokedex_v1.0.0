@@ -61,11 +61,14 @@ class _PokemonListViewState extends State<PokemonListView> {
   }
 
   void _showPokemonDetailsModal(BuildContext context, Pokemon pokemon) async {
-    final detailedPokemon = await _fetchPokemonDetails(pokemon.id);
+    final repository = PokemonRepository();
+    final detailedPokemon = await repository.fetchPokemonDetails(pokemon.id);
+    final description = await repository.fetchPokemonDescription(pokemon.id);
     showModalBottomSheet(
         context: context,
         builder: (BuildContext context) {
-          return PokemonDetailsModal(pokemon: detailedPokemon);
+          return PokemonDetailsModal(
+              pokemon: detailedPokemon, description: description);
         });
   }
 

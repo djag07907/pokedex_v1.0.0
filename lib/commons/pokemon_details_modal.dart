@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex_v1_0_0/commons/pikachu_loading.dart';
 import 'package:pokedex_v1_0_0/commons/pokemon_sound_button.dart';
 import 'package:pokedex_v1_0_0/models/pokemon_model.dart';
+import 'package:pokedex_v1_0_0/repositories/pokemon_repository.dart';
 import 'package:pokedex_v1_0_0/resources/themes.dart';
 import 'package:pokedex_v1_0_0/views/pokemon_details_view.dart';
 
 class PokemonDetailsModal extends StatelessWidget {
   final Pokemon pokemon;
+  final PokemonRepository pokemonRepository = PokemonRepository();
+
   String _capitalizeFirstLetter(String text) {
     return text.substring(0, 1).toUpperCase() + text.substring(1);
   }
 
   void playPokemonSound() {}
 
-  const PokemonDetailsModal({super.key, required this.pokemon});
+  PokemonDetailsModal({
+    super.key,
+    required this.pokemon,
+    required String description,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,15 +37,23 @@ class PokemonDetailsModal extends StatelessWidget {
             ),
             backgroundColor: mainBackground,
           ),
-          PokemonDetailsView(pokemon: pokemon),
-          // Text('Pokemon Types: ${pokemon.types.join(', ')}'),
-          // Text('Types: ${pokemon.types.join(', ')}'),
-          const Text(
-            'Description: ',
-            style: TextStyle(fontWeight: FontWeight.bold),
+          FutureBuilder<String>(
+            future: pokemonRepository.fetchPokemonDescription(pokemon.id),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return PokemonDetailsView(
+                  pokemon: pokemon,
+                  description: snapshot.data!,
+                );
+              } else if (snapshot.hasError) {
+                return Text(
+                  'Error: ${snapshot.error}',
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                );
+              }
+              return const PikachuLoading();
+            },
           ),
-          // Text('Description: ${pokemon.description}'),
-          // const Text("More information here."),
           const SizedBox(
             height: 25,
           ),

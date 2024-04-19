@@ -27,7 +27,6 @@ class PokemonRepository {
             types: [],
             height: 0,
             weight: 0,
-            // description: '',
           ));
         }
 
@@ -59,6 +58,31 @@ class PokemonRepository {
         return Pokemon.fromJson(data);
       } else {
         throw Exception('Failed to parse Pokemon data');
+      }
+    } else {
+      throw Exception('Failed to load pokemon details');
+    }
+  }
+
+  Future<String> fetchPokemonDescription(int id) async {
+    final response = await http.get(Uri.parse('$pokemonList/$id'));
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      final speciesUrl = data['species']['url'];
+      final speciesResponse = await http.get(Uri.parse(speciesUrl));
+      if (speciesResponse.statusCode == 200) {
+        final speciesData = json.decode(speciesResponse.body);
+        final flavorTextEntries = speciesData['flavor_text_entries'];
+        final englishFlavorText = flavorTextEntries.firstWhere(
+            (entry) => entry['language']['name'] == 'en',
+            orElse: () => null);
+        if (englishFlavorText != null) {
+          return englishFlavorText['flavor_text'];
+        } else {
+          throw Exception('Failed to find English flavor text');
+        }
+      } else {
+        throw Exception('Failed to load pokemon species');
       }
     } else {
       throw Exception('Failed to load pokemon details');
