@@ -8,7 +8,7 @@ This Flutter app allows users to browse a list of Pokemon fetched from the PokeA
 
 Instructions to run:
 
-1. This project uses flutter version 3.19.5 stable version, Make sure you have that version installed or do `flutter upgrade`
+1. This project uses flutter version 3.24.4 stable version, Make sure you have that version installed or do `flutter upgrade`
 2. First do `flutter pub get` and then `flutter run`
 
 Project Highlights:
