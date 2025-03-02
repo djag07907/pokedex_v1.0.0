@@ -118,7 +118,9 @@ class _PokemonDetailsViewState extends State<PokemonDetailsView> {
                   children: [
                     const Text(
                       pokemonTypesText,
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     ...widget.pokemon.types.map(
                       (type) => ElevatedButton(

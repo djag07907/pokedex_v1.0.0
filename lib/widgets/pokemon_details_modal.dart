@@ -64,7 +64,9 @@ class _PokemonDetailsModalState extends State<PokemonDetailsModal> {
                 _capitalizeFirstLetter(
                     '${widget.pokemon.name} #${widget.pokemon.id.toString().padLeft(3, '0')}'),
                 style: const TextStyle(
-                    color: whiteColor, fontWeight: FontWeight.bold),
+                  color: whiteColor,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               backgroundColor: mainBackground,
             ),
@@ -80,7 +82,9 @@ class _PokemonDetailsModalState extends State<PokemonDetailsModal> {
                 } else if (snapshot.hasError) {
                   return Text(
                     'Error: ${snapshot.error}',
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   );
                 }
                 return const PikachuLoading();
