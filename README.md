@@ -22,9 +22,9 @@ Project Highlights:
 Packages used:
 
 - http:^1.2.1
-- flutter_bloc: ^8.1.5
+- flutter_bloc: ^9.1.0
 - equatable: ^2.0.5
-- cupertino_icons: ^1.0.6
+- cupertino_icons: ^0.9.40
 
 Project/ Screen flow:
 
